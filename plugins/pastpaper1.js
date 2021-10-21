@@ -5,213 +5,213 @@ const fs = require('fs');
 const axios = require('axios');
 const Language = require('../language');
 let work = Config.WORKTYPE == 'public' ? false : true
-const EX = require('../Alexa/paperpdfbase');
+const EX = require('../mokuth na/data');
 // SINHALA
-const SIN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SIN + "\n*📂YEAR:*" + EX.Y15
-const SIN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SIN + "\n*📂YEAR:*" + EX.Y16
-const SIN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SIN + "\n*📂YEAR:*" + EX.Y17
-const SIN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SIN + "\n*📂YEAR:*" + EX.Y18
-const SIN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SIN + "\n*📂YEAR:*" + EX.Y19
+const SIN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y15
+const SIN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y16
+const SIN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y17
+const SIN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y18
+const SIN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y19
 
 // SCIENCE
-const SC15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SCI + "\n*📂YEAR:*" + EX.Y15
-const SC16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SCI + "\n*📂YEAR:*" + EX.Y16
-const SC17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SCI + "\n*📂YEAR:*" + EX.Y17
-const SC18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SCI + "\n*📂YEAR:*" + EX.Y18
-const SC19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SCI + "\n*📂YEAR:*" + EX.Y19
+const SC15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SCI + "\n*📂YEAR:* " + EX.Y15
+const SC16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SCI + "\n*📂YEAR:* " + EX.Y16
+const SC17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SCI + "\n*📂YEAR:* " + EX.Y17
+const SC18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SCI + "\n*📂YEAR:* " + EX.Y18
+const SC19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SCI + "\n*📂YEAR:* " + EX.Y19
 
 // MATHS
-const MA15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MTS + "\n*📂YEAR:*" + EX.Y15
-const MA16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MTS + "\n*📂YEAR:*" + EX.Y16
-const MA17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MTS + "\n*📂YEAR:*" + EX.Y17
-const MA18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MTS + "\n*📂YEAR:*" + EX.Y18
-const MA19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MTS + "\n*📂YEAR:*" + EX.Y19
+const MA15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MTS + "\n*📂YEAR:* " + EX.Y15
+const MA16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MTS + "\n*📂YEAR:* " + EX.Y16
+const MA17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MTS + "\n*📂YEAR:* " + EX.Y17
+const MA18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MTS + "\n*📂YEAR:* " + EX.Y18
+const MA19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MTS + "\n*📂YEAR:* " + EX.Y19
 
 // HISTORY
-const HIS15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIS + "\n*📂YEAR:*" + EX.Y15
-const HIS16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIS + "\n*📂YEAR:*" + EX.Y16
-const HIS17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIS + "\n*📂YEAR:*" + EX.Y17
-const HIS18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIS + "\n*📂YEAR:*" + EX.Y18
-const HIS19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIS + "\n*📂YEAR:*" + EX.Y19
+const HIS15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIS + "\n*📂YEAR:* " + EX.Y15
+const HIS16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIS + "\n*📂YEAR:* " + EX.Y16
+const HIS17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIS + "\n*📂YEAR:* " + EX.Y17
+const HIS18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIS + "\n*📂YEAR:* " + EX.Y18
+const HIS19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIS + "\n*📂YEAR:* " + EX.Y19
 
 // ENGLISH
-const EN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENG + "\n*📂YEAR:*" + EX.Y15
-const EN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENG + "\n*📂YEAR:*" + EX.Y16
-const EN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENG + "\n*📂YEAR:*" + EX.Y17
-const EN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENG + "\n*📂YEAR:*" + EX.Y18
-const EN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENG + "\n*📂YEAR:*" + EX.Y19
+const EN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENG + "\n*📂YEAR:* " + EX.Y15
+const EN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENG + "\n*📂YEAR:* " + EX.Y16
+const EN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENG + "\n*📂YEAR:* " + EX.Y17
+const EN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENG + "\n*📂YEAR:* " + EX.Y18
+const EN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENG + "\n*📂YEAR:* " + EX.Y19
 
 // BUDDHISM
-const BU15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BUD + "\n*📂YEAR:*" + EX.Y15
-const BU16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BUD + "\n*📂YEAR:*" + EX.Y16
-const BU17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BUD + "\n*📂YEAR:*" + EX.Y17
-const BU18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BUD + "\n*📂YEAR:*" + EX.Y18
-const BU19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BUD + "\n*📂YEAR:*" + EX.Y19
+const BU15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BUD + "\n*📂YEAR:* " + EX.Y15
+const BU16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BUD + "\n*📂YEAR:* " + EX.Y16
+const BU17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BUD + "\n*📂YEAR:* " + EX.Y17
+const BU18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BUD + "\n*📂YEAR:* " + EX.Y18
+const BU19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BUD + "\n*📂YEAR:* " + EX.Y19
 
 // TAMIL
-const TAM115_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAM + "\n*📂YEAR:*" + EX.Y15
-const TAM116_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAM + "\n*📂YEAR:*" + EX.Y16
-const TAM117_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAM + "\n*📂YEAR:*" + EX.Y17
-const TAM118_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAM + "\n*📂YEAR:*" + EX.Y18
-const TAM119_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAM + "\n*📂YEAR:*" + EX.Y19
+const TAM115_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAM + "\n*📂YEAR:* " + EX.Y15
+const TAM116_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAM + "\n*📂YEAR:* " + EX.Y16
+const TAM117_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAM + "\n*📂YEAR:* " + EX.Y17
+const TAM118_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAM + "\n*📂YEAR:* " + EX.Y18
+const TAM119_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAM + "\n*📂YEAR:* " + EX.Y19
 
 // MUSIC
-const MUS115_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MUS + "\n*📂YEAR:*" + EX.Y15
-const MUS116_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MUS + "\n*📂YEAR:*" + EX.Y16
-const MUS117_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MUS + "\n*📂YEAR:*" + EX.Y17
-const MUS118_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MUS + "\n*📂YEAR:*" + EX.Y18
-const MUS119_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MUS + "\n*📂YEAR:*" + EX.Y19
+const MUS115_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MUS + "\n*📂YEAR:* " + EX.Y15
+const MUS116_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MUS + "\n*📂YEAR:* " + EX.Y16
+const MUS117_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MUS + "\n*📂YEAR:* " + EX.Y17
+const MUS118_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MUS + "\n*📂YEAR:* " + EX.Y18
+const MUS119_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MUS + "\n*📂YEAR:* " + EX.Y19
 
 // DRAMA
-const DR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DRA + "\n*📂YEAR:*" + EX.Y15
-const DR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DRA + "\n*📂YEAR:*" + EX.Y16
-const DR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DRA + "\n*📂YEAR:*" + EX.Y17
-const DR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DRA + "\n*📂YEAR:*" + EX.Y18
-const DR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DRA + "\n*📂YEAR:*" + EX.Y19
+const DR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DRA + "\n*📂YEAR:* " + EX.Y15
+const DR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DRA + "\n*📂YEAR:* " + EX.Y16
+const DR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DRA + "\n*📂YEAR:* " + EX.Y17
+const DR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DRA + "\n*📂YEAR:* " + EX.Y18
+const DR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DRA + "\n*📂YEAR:* " + EX.Y19
 
 //DANCE ORIANTAL
-const DO15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANO + "\n*📂YEAR:*" + EX.Y15
-const DO16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANO + "\n*📂YEAR:*" + EX.Y16
-const DO17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANO + "\n*📂YEAR:*" + EX.Y17
-const DO18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANO + "\n*📂YEAR:*" + EX.Y18
-const DO19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANO + "\n*📂YEAR:*" + EX.Y19
+const DO15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANO + "\n*📂YEAR:* " + EX.Y15
+const DO16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANO + "\n*📂YEAR:* " + EX.Y16
+const DO17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANO + "\n*📂YEAR:* " + EX.Y17
+const DO18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANO + "\n*📂YEAR:* " + EX.Y18
+const DO19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANO + "\n*📂YEAR:* " + EX.Y19
 
 //DANCE BHARATH
-const DB15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANB + "\n*📂YEAR:*" + EX.Y15
-const DB16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANB + "\n*📂YEAR:*" + EX.Y16
-const DB17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANB + "\n*📂YEAR:*" + EX.Y17
-const DB18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANB + "\n*📂YEAR:*" + EX.Y18
-const DB19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DANB + "\n*📂YEAR:*" + EX.Y19
+const DB15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANB + "\n*📂YEAR:* " + EX.Y15
+const DB16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANB + "\n*📂YEAR:* " + EX.Y16
+const DB17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANB + "\n*📂YEAR:* " + EX.Y17
+const DB18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANB + "\n*📂YEAR:* " + EX.Y18
+const DB19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DANB + "\n*📂YEAR:* " + EX.Y19
 
 //TAMIL LIT
-const TAML15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAML + "\n*📂YEAR:*" + EX.Y15
-const TAML16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAML + "\n*📂YEAR:*" + EX.Y16
-const TAML17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAML + "\n*📂YEAR:*" + EX.Y17
-const TAML18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAML + "\n*📂YEAR:*" + EX.Y18
-const TAML19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.TAML + "\n*📂YEAR:*" + EX.Y19
+const TAML15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAML + "\n*📂YEAR:* " + EX.Y15
+const TAML16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAML + "\n*📂YEAR:* " + EX.Y16
+const TAML17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAML + "\n*📂YEAR:* " + EX.Y17
+const TAML18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAML + "\n*📂YEAR:* " + EX.Y18
+const TAML19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.TAML + "\n*📂YEAR:* " + EX.Y19
 
 //SINHALA LIT
-const SLIT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SINL + "\n*📂YEAR:*" + EX.Y15
-const SLIT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SINL + "\n*📂YEAR:*" + EX.Y16
-const SLIT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SINL + "\n*📂YEAR:*" + EX.Y17
-const SLIT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SINL + "\n*📂YEAR:*" + EX.Y18
-const SLIT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SINL + "\n*📂YEAR:*" + EX.Y19
+const SLIT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SINL + "\n*📂YEAR:* " + EX.Y15
+const SLIT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SINL + "\n*📂YEAR:* " + EX.Y16
+const SLIT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SINL + "\n*📂YEAR:* " + EX.Y17
+const SLIT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SINL + "\n*📂YEAR:* " + EX.Y18
+const SLIT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SINL + "\n*📂YEAR:* " + EX.Y19
 
 //ENGLISH LIT
-const LITEN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENGL + "\n*📂YEAR:*" + EX.Y15
-const LITEN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENGL + "\n*📂YEAR:*" + EX.Y16
-const LITEN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENGL + "\n*📂YEAR:*" + EX.Y17
-const LITEN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENGL + "\n*📂YEAR:*" + EX.Y18
-const LITEN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENGL + "\n*📂YEAR:*" + EX.Y19
+const LITEN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENGL + "\n*📂YEAR:* " + EX.Y15
+const LITEN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENGL + "\n*📂YEAR:* " + EX.Y16
+const LITEN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENGL + "\n*📂YEAR:* " + EX.Y17
+const LITEN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENGL + "\n*📂YEAR:* " + EX.Y18
+const LITEN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENGL + "\n*📂YEAR:* " + EX.Y19
 
 //ART
-const AR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ART + "\n*📂YEAR:*" + EX.Y15
-const AR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ART + "\n*📂YEAR:*" + EX.Y16
-const AR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ART + "\n*📂YEAR:*" + EX.Y17
-const AR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ART + "\n*📂YEAR:*" + EX.Y18
-const AR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ART + "\n*📂YEAR:*" + EX.Y19
+const AR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ART + "\n*📂YEAR:* " + EX.Y15
+const AR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ART + "\n*📂YEAR:* " + EX.Y16
+const AR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ART + "\n*📂YEAR:* " + EX.Y17
+const AR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ART + "\n*📂YEAR:* " + EX.Y18
+const AR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ART + "\n*📂YEAR:* " + EX.Y19
 
 //SECOND LANG TAMIL
-const SLT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SLT + "\n*📂YEAR:*" + EX.Y15
-const SLT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SLT + "\n*📂YEAR:*" + EX.Y16
-const SLT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SLT + "\n*📂YEAR:*" + EX.Y17
-const SLT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SLT + "\n*📂YEAR:*" + EX.Y18
-const SLT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.SLT + "\n*📂YEAR:*" + EX.Y19
+const SLT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SLT + "\n*📂YEAR:* " + EX.Y15
+const SLT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SLT + "\n*📂YEAR:* " + EX.Y16
+const SLT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SLT + "\n*📂YEAR:* " + EX.Y17
+const SLT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SLT + "\n*📂YEAR:* " + EX.Y18
+const SLT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SLT + "\n*📂YEAR:* " + EX.Y19
 
 //JAPAN
-const JAP15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.JAP + "\n*📂YEAR:*" + EX.Y15
-const JAP16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.JAP + "\n*📂YEAR:*" + EX.Y16
-const JAP17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.JAP + "\n*📂YEAR:*" + EX.Y17
-const JAP18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.JAP + "\n*📂YEAR:*" + EX.Y18
-const JAP19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.JAP + "\n*📂YEAR:*" + EX.Y19
+const JAP15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.JAP + "\n*📂YEAR:* " + EX.Y15
+const JAP16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.JAP + "\n*📂YEAR:* " + EX.Y16
+const JAP17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.JAP + "\n*📂YEAR:* " + EX.Y17
+const JAP18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.JAP + "\n*📂YEAR:* " + EX.Y18
+const JAP19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.JAP + "\n*📂YEAR:* " + EX.Y19
 
 //HINDI
-const HIN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIN + "\n*📂YEAR:*" + EX.Y15
-const HIN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIN + "\n*📂YEAR:*" + EX.Y16
-const HIN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIN + "\n*📂YEAR:*" + EX.Y17
-const HIN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIN + "\n*📂YEAR:*" + EX.Y18
-const HIN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HIN + "\n*📂YEAR:*" + EX.Y19
+const HIN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIN + "\n*📂YEAR:* " + EX.Y15
+const HIN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIN + "\n*📂YEAR:* " + EX.Y16
+const HIN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIN + "\n*📂YEAR:* " + EX.Y17
+const HIN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIN + "\n*📂YEAR:* " + EX.Y18
+const HIN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HIN + "\n*📂YEAR:* " + EX.Y19
 
 //GEOGRAPHY
-const GRO15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.GRO + "\n*📂YEAR:*" + EX.Y15
-const GRO16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.GRO + "\n*📂YEAR:*" + EX.Y16
-const GRO17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.GRO + "\n*📂YEAR:*" + EX.Y17
-const GRO18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.GRO + "\n*📂YEAR:*" + EX.Y18
-const GRO19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.GRO + "\n*📂YEAR:*" + EX.Y19
+const GRO15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.GRO + "\n*📂YEAR:* " + EX.Y15
+const GRO16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.GRO + "\n*📂YEAR:* " + EX.Y16
+const GRO17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.GRO + "\n*📂YEAR:* " + EX.Y17
+const GRO18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.GRO + "\n*📂YEAR:* " + EX.Y18
+const GRO19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.GRO + "\n*📂YEAR:* " + EX.Y19
 
 //FRENCH
-const FREN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.FREN + "\n*📂YEAR:*" + EX.Y15
-const FREN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.FREN + "\n*📂YEAR:*" + EX.Y16
-const FREN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.FREN + "\n*📂YEAR:*" + EX.Y17
-const FREN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.FREN + "\n*📂YEAR:*" + EX.Y18
-const FREN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.FREN + "\n*📂YEAR:*" + EX.Y19
+const FREN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.FREN + "\n*📂YEAR:* " + EX.Y15
+const FREN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.FREN + "\n*📂YEAR:* " + EX.Y16
+const FREN17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.FREN + "\n*📂YEAR:* " + EX.Y17
+const FREN18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.FREN + "\n*📂YEAR:* " + EX.Y18
+const FREN19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.FREN + "\n*📂YEAR:* " + EX.Y19
 
 //ENTRENEURSHIP STUDIES
-const ENTR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENTR + "\n*📂YEAR:*" + EX.Y15
-const ENTR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENTR + "\n*📂YEAR:*" + EX.Y16
-const ENTR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENTR + "\n*📂YEAR:*" + EX.Y17
-const ENTR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENTR + "\n*📂YEAR:*" + EX.Y18
-const ENTR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ENTR + "\n*📂YEAR:*" + EX.Y19
+const ENTR15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENTR + "\n*📂YEAR:* " + EX.Y15
+const ENTR16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENTR + "\n*📂YEAR:* " + EX.Y16
+const ENTR17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENTR + "\n*📂YEAR:* " + EX.Y17
+const ENTR18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENTR + "\n*📂YEAR:* " + EX.Y18
+const ENTR19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ENTR + "\n*📂YEAR:* " + EX.Y19
 
 //CIVIC
-const CIV15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CIV + "\n*📂YEAR:*" + EX.Y15
-const CIV16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CIV + "\n*📂YEAR:*" + EX.Y16
-const CIV17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CIV + "\n*📂YEAR:*" + EX.Y17
-const CIV18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CIV + "\n*📂YEAR:*" + EX.Y18
-const CIV19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CIV + "\n*📂YEAR:*" + EX.Y19
+const CIV15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CIV + "\n*📂YEAR:* " + EX.Y15
+const CIV16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CIV + "\n*📂YEAR:* " + EX.Y16
+const CIV17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CIV + "\n*📂YEAR:* " + EX.Y17
+const CIV18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CIV + "\n*📂YEAR:* " + EX.Y18
+const CIV19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CIV + "\n*📂YEAR:* " + EX.Y19
 
 //BUSINAS ACCOUNTING STUDIES
-const BAST15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BAST + "\n*📂YEAR:*" + EX.Y15
-const BAST16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BAST + "\n*📂YEAR:*" + EX.Y16
-const BAST17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BAST + "\n*📂YEAR:*" + EX.Y17
-const BAST18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BAST + "\n*📂YEAR:*" + EX.Y18
-const BAST19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.BAST + "\n*📂YEAR:*" + EX.Y19
+const BAST15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BAST + "\n*📂YEAR:* " + EX.Y15
+const BAST16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BAST + "\n*📂YEAR:* " + EX.Y16
+const BAST17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BAST + "\n*📂YEAR:* " + EX.Y17
+const BAST18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BAST + "\n*📂YEAR:* " + EX.Y18
+const BAST19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.BAST + "\n*📂YEAR:* " + EX.Y19
 
 //IT
-const ICT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ICT + "\n*📂YEAR:*" + EX.Y15
-const ICT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ICT + "\n*📂YEAR:*" + EX.Y16
-const ICT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ICT + "\n*📂YEAR:*" + EX.Y17
-const ICT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ICT + "\n*📂YEAR:*" + EX.Y18
-const ICT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.ICT + "\n*📂YEAR:*" + EX.Y19
+const ICT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ICT + "\n*📂YEAR:* " + EX.Y15
+const ICT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ICT + "\n*📂YEAR:* " + EX.Y16
+const ICT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ICT + "\n*📂YEAR:* " + EX.Y17
+const ICT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ICT + "\n*📂YEAR:* " + EX.Y18
+const ICT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.ICT + "\n*📂YEAR:* " + EX.Y19
 
 //HOME economiv
-const HOMEC15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HOMEC + "\n*📂YEAR:*" + EX.Y15
-const HOMEC16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HOMEC + "\n*📂YEAR:*" + EX.Y16
-const HOMEC17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HOMEC + "\n*📂YEAR:*" + EX.Y17
-const HOMEC18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HOMEC + "\n*📂YEAR:*" + EX.Y18
-const HOMEC19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HOMEC + "\n*📂YEAR:*" + EX.Y19
+const HOMEC15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HOMEC + "\n*📂YEAR:* " + EX.Y15
+const HOMEC16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HOMEC + "\n*📂YEAR:* " + EX.Y16
+const HOMEC17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HOMEC + "\n*📂YEAR:* " + EX.Y17
+const HOMEC18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HOMEC + "\n*📂YEAR:* " + EX.Y18
+const HOMEC19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HOMEC + "\n*📂YEAR:* " + EX.Y19
 
 //helth
-const HEL15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HEL + "\n*📂YEAR:*" + EX.Y15
-const HEL16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HEL + "\n*📂YEAR:*" + EX.Y16
-const HEL17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HEL + "\n*📂YEAR:*" + EX.Y17
-const HEL18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HEL + "\n*📂YEAR:*" + EX.Y18
-const HEL19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.HEL + "\n*📂YEAR:*" + EX.Y19
+const HEL15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HEL + "\n*📂YEAR:* " + EX.Y15
+const HEL16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HEL + "\n*📂YEAR:* " + EX.Y16
+const HEL17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HEL + "\n*📂YEAR:* " + EX.Y17
+const HEL18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HEL + "\n*📂YEAR:* " + EX.Y18
+const HEL19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.HEL + "\n*📂YEAR:* " + EX.Y19
 
 //media
-const MEDIA15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MEDIA + "\n*📂YEAR:*" + EX.Y15
-const MEDIA16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MEDIA + "\n*📂YEAR:*" + EX.Y16
-const MEDIA17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MEDIA + "\n*📂YEAR:*" + EX.Y17
-const MEDIA18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MEDIA + "\n*📂YEAR:*" + EX.Y18
-const MEDIA19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.MEDIA + "\n*📂YEAR:*" + EX.Y19
+const MEDIA15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MEDIA + "\n*📂YEAR:* " + EX.Y15
+const MEDIA16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MEDIA + "\n*📂YEAR:* " + EX.Y16
+const MEDIA17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MEDIA + "\n*📂YEAR:* " + EX.Y17
+const MEDIA18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MEDIA + "\n*📂YEAR:* " + EX.Y18
+const MEDIA19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.MEDIA + "\n*📂YEAR:* " + EX.Y19
 
 //art and craft
-const CRAFT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CRAFT + "\n*📂YEAR:*" + EX.Y15
-const CRAFT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CRAFT + "\n*📂YEAR:*" + EX.Y16
-const CRAFT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CRAFT + "\n*📂YEAR:*" + EX.Y17
-const CRAFT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CRAFT + "\n*📂YEAR:*" + EX.Y18
-const CRAFT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.CRAFT + "\n*📂YEAR:*" + EX.Y19
+const CRAFT15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CRAFT + "\n*📂YEAR:* " + EX.Y15
+const CRAFT16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CRAFT + "\n*📂YEAR:* " + EX.Y16
+const CRAFT17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CRAFT + "\n*📂YEAR:* " + EX.Y17
+const CRAFT18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CRAFT + "\n*📂YEAR:* " + EX.Y18
+const CRAFT19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.CRAFT + "\n*📂YEAR:* " + EX.Y19
 
 //agree
-const AGREE15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.AGREE + "\n*📂YEAR:*" + EX.Y15
-const AGREE16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.AGREE + "\n*📂YEAR:*" + EX.Y16
-const AGREE17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.AGREE + "\n*📂YEAR:*" + EX.Y17
-const AGREE18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.AGREE + "\n*📂YEAR:*" + EX.Y18
-const AGREE19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.AGREE + "\n*📂YEAR:*" + EX.Y19
+const AGREE15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.AGREE + "\n*📂YEAR:* " + EX.Y15
+const AGREE16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.AGREE + "\n*📂YEAR:* " + EX.Y16
+const AGREE17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.AGREE + "\n*📂YEAR:* " + EX.Y17
+const AGREE18_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.AGREE + "\n*📂YEAR:* " + EX.Y18
+const AGREE19_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.AGREE + "\n*📂YEAR:* " + EX.Y19
 
 //DISIGN TECHNOLOGY
-const DIST15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DIST + "\n*📂YEAR:*" + EX.Y15
-const DIST17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:*" + EX.DIST + "\n*📂YEAR:*" + EX.Y17
+const DIST15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DIST + "\n*📂YEAR:* " + EX.Y15
+const DIST17_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.DIST + "\n*📂YEAR:* " + EX.Y17
 
 
 
@@ -1998,6 +1998,4 @@ Asena.addCommand({pattern: 'oisigntech 2017', fromMe: work, dontAddCommandList: 
       await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.document, {quoted: message.data , filename: EX.UDIST + ' ' + EX.UY17 ,mimetype: Mimetype.pdf})
   
       }));
-
-
 
