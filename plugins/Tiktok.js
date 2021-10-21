@@ -1,7 +1,7 @@
 const Asena = require('../events');
 const {MessageType,mimetype,Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
-const Config = require('../config');
+const Alexa = require('../config');
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 const ALang = Language.getString('amazone');
@@ -19,7 +19,7 @@ const capt = "🦹‍♀️ *ALEXA Tiktok Downloader* 🕊\n"
 
     await message.sendMessage('👻 *Tiktok Video Downloader* 🕊 \n'+Lang.DOWNLOADING_VIDEO)
 
-		var url = `${Config.RSITE}tiktok?url=${link}`
+		var url = `${Alexa.RSITE}tiktok?url=${link}`
 
 				await axios
 					.get(`${url}`)
@@ -52,7 +52,7 @@ const capt = "🦹‍♀️ *ALEXA Tiktok Downloader* 🕊\n"
 
     await message.sendMessage('👻 *Tiktok Video Downloader* 🕊 \n'+Lang.DOWNLOADING_VIDEO)
 
-		var url = `${Config.RSITE}tiktok?url=${link}`
+		var url = `${Alexa.RSITE}tiktok?url=${link}`
 
 				await axios
 					.get(`${url}`)
