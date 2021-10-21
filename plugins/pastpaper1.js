@@ -5,7 +5,7 @@ const fs = require('fs');
 const axios = require('axios');
 const Language = require('../language');
 let work = Config.WORKTYPE == 'public' ? false : true
-const EX = require('../mokuth na/data');
+const EX = require('../Alexa/paperpdfbase');
 // SINHALA
 const SIN15_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y15
 const SIN16_UP = "*✍️EXAM:* " + EX.OL + "\n*⭕SUBJECT:* " + EX.SIN + "\n*📂YEAR:* " + EX.Y16
